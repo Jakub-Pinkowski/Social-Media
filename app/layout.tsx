@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
 
+import { AuthProvider } from './AuthProvider'
 import NavMenu from './NavMenu'
 
 const nunito = Nunito({
@@ -16,11 +17,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-            <body className={nunito.className}>
-                <NavMenu />
-                <main>{children}</main>
-            </body>
-        </html>
+        <AuthProvider>
+            <html lang="en">
+                <body className={nunito.className}>
+                    <NavMenu />
+                    <main>{children}</main>
+                </body>
+            </html>
+        </AuthProvider>
     )
 }
