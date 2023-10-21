@@ -1,4 +1,4 @@
-'use-client'
+'use client'
 
 import { useSession, signIn, signOut } from 'next-auth/react'
 import Image from 'next/image'
@@ -6,41 +6,28 @@ import Link from 'next/link'
 
 export function SignInButton() {
     const { data: session, status } = useSession()
-    console.log('session', session)
-    console.log('status', status)
-
-    const signinHandler = () => {
-        signIn()
-    }
+    console.log(session, status)
 
     if (status === 'loading') {
-        return <> ... </>
+        return <>...</>
     }
 
     if (status === 'authenticated') {
         return (
-            <>
-                <Link href={`/dashboard`}>
-                    <a>
-                        <Image
-                            src={session?.user.image ?? 'mememan.webp'}
-                            alt={session?.user?.name as string}
-                            width={32}
-                            height={32}
-                        />
-                    </a>
-                </Link>
-            </>
+            <Link href={`/dashboard`}>
+                <Image
+                    src={session.user?.image ?? '/mememan.webp'}
+                    width={32}
+                    height={32}
+                    alt="Your Name"
+                />
+            </Link>
         )
     }
 
-    return <button onClick={signinHandler}>Sign In</button>
+    return <button onClick={() => signIn()}>Sign in</button>
 }
 
 export function SignOutButton() {
-    const signoutHandler = () => {
-        signOut()
-    }
-
-    return <button onClick={signoutHandler}>Sign Out</button>
+    return <button onClick={() => signOut()}>Sign out</button>
 }
