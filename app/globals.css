@@ -21,7 +21,7 @@ body {
 }
 
 main {
-    background-color: white;
+    background-color: var(--light-gray);
     padding: 1rem;
     min-height: 300px;
 }
