@@ -12,7 +12,7 @@ export default function UserCard({ id, name, age, image }: Props) {
     return (
         <div className={styles.card}>
             <img
-                src={image ?? '/mememan.webp'}
+                src={image ?? 'https://picsum.photos/200'}
                 alt={`${name}'s profile`}
                 className={styles.cardImage}
             />

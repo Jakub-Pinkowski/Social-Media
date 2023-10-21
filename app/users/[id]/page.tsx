@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import { Metadata } from 'next'
 
 interface Props {
     params: {
@@ -19,7 +20,14 @@ export default async function UserProfile({ params }: Props) {
         <div>
             <h1>{name}</h1>
 
-            <img width={300} src={image ?? '/mememan.webp'} alt={`${name}'s profile`} />
+            <img
+                width={300}
+                src={
+                    image ??
+                    'https://picsum.photos/200'
+                }
+                alt={`${name}'s profile`}
+            />
 
             <h3>Bio</h3>
             <p>{bio}</p>
