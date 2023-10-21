@@ -12,6 +12,8 @@ export default async function Dashboard() {
         redirect('/api/auth/signin')
     }
 
+    // TODO: Fix the form submisstion, it's not working because the email does not exist in the database
+
     const currentUserEmail = session?.user?.email ?? ''
     const user = await prisma.user.findUnique({
         where: {
