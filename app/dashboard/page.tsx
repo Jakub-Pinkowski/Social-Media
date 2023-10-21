@@ -14,12 +14,14 @@ export default async function Dashboard() {
 
     // TODO: Fix the form submisstion, it's not working because the email does not exist in the database
 
-    const currentUserEmail = session?.user?.email ?? ''
+    // Find the user
+    const currentUserEmail = session?.user?.email ?? 'test@test.com'
     const user = await prisma.user.findUnique({
         where: {
             email: currentUserEmail,
         },
     })
+    console.log(user)
 
     return (
         <>
