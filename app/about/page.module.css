@@ -1,0 +1,10 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+    margin: 2rem;
+    height: 100vh;
+    font-size: 20px;
+    color: var(--light-gray)
+}
