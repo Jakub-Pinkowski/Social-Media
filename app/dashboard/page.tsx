@@ -21,7 +21,6 @@ export default async function Dashboard() {
             email: currentUserEmail,
         },
     })
-    console.log(user)
 
     return (
         <>

@@ -6,7 +6,6 @@ import { authOptions } from '../auth/[...nextauth]/route'
 export async function PUT(request: Request) {
     const session = await getServerSession(authOptions)
     const currentUserEmail = session?.user?.email!
-    console.log('currentUserEmail', currentUserEmail)
 
     const data = await request.json()
     data.age = Number(data.age)
@@ -15,7 +14,6 @@ export async function PUT(request: Request) {
         where: { email: currentUserEmail },
         data,
     })
-    console.log('user', user)
 
     return NextResponse.json(user)
 }
