@@ -1,10 +1,10 @@
 'use client'
 
 export function ProfileForm({ user }: any) {
-    const updateUser = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
+    const updateUser = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
 
-        const formData = new FormData(e.currentTarget)
+        const formData = new FormData(event.currentTarget)
 
         const body = {
             name: formData.get('name'),
