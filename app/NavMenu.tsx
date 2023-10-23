@@ -9,23 +9,29 @@ export default function NavMenu() {
             <Link href="/">
                 <Image src="/next.svg" alt="Logo" width={216} height={32} />
             </Link>
-            <ul className={styles.links}>
-                <li>
-                    <Link href="/about">About</Link>
-                </li>
-                <li>
-                    <Link href="/blog">Blog</Link>
-                </li>
-                <li>
-                    <Link href="/users">Users</Link>
-                </li>
-                <li>
-                    <SignInButton />
-                </li>
-                <li>
-                    <SignOutButton />
-                </li>
-            </ul>
+            <div className={styles.sections}>
+                <ul className={styles.links}>
+                    <li>
+                        <Link href="/about">About</Link>
+                    </li>
+                    <li>
+                        <Link href="/blog">Blog</Link>
+                    </li>
+                    <li>
+                        <Link href="/users">Users</Link>
+                    </li>
+                </ul>
+            </div>
+            <div className={styles.account}>
+                <ul className={styles.links}>
+                    <li>
+                        <SignInButton />
+                    </li>
+                    <li>
+                        <SignOutButton />
+                    </li>
+                </ul>
+            </div>
         </nav>
     )
 }
