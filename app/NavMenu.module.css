@@ -32,10 +32,7 @@
     transition: color 0.1s ease-in-out;
 }
 
-.links a:hover {
-    color: var(--dark-blue);
-}
-
-.links button:hover {
+.links a:hover,
+button:hover {
     color: var(--dark-blue);
 }
