@@ -16,7 +16,7 @@ export default async function FollowButton({ targetUserId }: Props) {
         .then((user) => user?.id!)
 
     if (!currentUserId) {
-        return <p>Log in via Google Account to follow other users</p>
+        return <p>Log in via GitHub Account to follow other users</p>
     }
 
     const isFollowing = await prisma.follows.findFirst({
