@@ -31,7 +31,6 @@ export const authOptions: NextAuthOptions = {
     ],
     callbacks: {
         async signIn({ user }) {
-            // block signin if necessary
             return true
         },
     },

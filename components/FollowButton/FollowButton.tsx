@@ -9,8 +9,6 @@ interface Props {
 export default async function FollowButton({ targetUserId }: Props) {
     const session = await getServerSession()
 
-    console.log('session', session)
-
     const currentUserId = await prisma.user
         .findUnique({ where: { email: session?.user?.email! } })
         .then((user) => user?.id!)

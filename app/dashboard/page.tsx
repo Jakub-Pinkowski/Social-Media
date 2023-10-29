@@ -8,6 +8,7 @@ import { authOptions } from '../api/auth/[...nextauth]/route'
 export default async function Dashboard() {
     const session = await getServerSession(authOptions)
 
+    console.log('dashboard page line 11' + session)
     if (!session) {
         redirect('/api/auth/signin')
     }
@@ -25,10 +26,13 @@ export default async function Dashboard() {
     return (
         <>
             <h1>Dashboard</h1>
-            <SignOutButton />
-            <ProfileForm user={user} />
+
+            {user && (
+                <>
+                    <SignOutButton /> <ProfileForm user={user} />
+                </>
+            )}
+            {!user && <p>Log in via Github to edit your profile</p>}
         </>
     )
 }
-
-
